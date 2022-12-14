@@ -1,6 +1,7 @@
 <script>
     import {auth, googleProvider} from './firebase'
     import {authState} from 'rxfire/auth'
+    import Chatroom from './Chatroom.svelte'
 
     let user;
 
@@ -57,6 +58,7 @@
 <main>
     {#if user}
         Logged in as {user.uid}
+        <Chatroom/>
     {:else }
         <div class="login-form">
             <button on:click={login}>
